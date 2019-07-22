@@ -1,0 +1,12 @@
+<div class="container border  rounded m-2 p-2 shadow p-3 w-50" *ngIf="allProducts">
+    <b>Products List</b>
+    <div class="card" style="width: 18rem;" *ngFor="let product of allProducts">
+        <img src="{{product.image}}" class="card-img-top p-3" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.title}}</h5>
+            <p class="card-text">${{product.price}}</p>
+            <a [routerLink]="['edit', product._id]" class="btn btn-primary">Edit</a>
+            <a (click)='onDelete(product._id)' class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<h3>Create a New Product</h3>
+<div class="container border  rounded m-2 p-2 shadow p-3 w-50">
+    <form (submit)="onSubmit()">
+    <div class="form-group">
+        <label>Title</label>
+        <p class="small text-danger" *ngIf="err?.title.message">{{err.title.message}}</p>
+        <input type="text" class="form-control" name="newProduct.title" [(ngModel)]="newProduct.title">
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <p class="small text-danger" *ngIf="err?.price.message">{{err.price.message}}</p>
+        <input type="text" class="form-control" name="newProduct.price" [(ngModel)]="newProduct.price">
+    </div>
+    <div class="form-group">
+        <label>Image URL</label>
+        <p class="small text-danger" *ngIf="err?.image.message">{{err.image.message}}</p>
+        <input type="text" class="form-control" name="newProduct.image" [(ngModel)]="newProduct.image">
+    </div>
+    <button class="btn btn-outline-primary btn-sm">Submit</button>
+    </form>
+</div>
